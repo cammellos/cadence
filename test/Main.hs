@@ -1,10 +1,10 @@
 module Main (main) where
 
-import Cadence (helloMessage)
-import Test.Hspec (describe, hspec, it, shouldBe)
+import qualified Cadence.ObjectiveSpec as ObjectiveSpec
+import qualified CadenceSpec
+import Test.Hspec (hspec)
 
 main :: IO ()
-main = hspec $
-  describe "helloMessage" $
-    it "returns the scaffold greeting" $
-      helloMessage `shouldBe` "Hello, Haskell!"
+main = hspec $ do
+  CadenceSpec.spec
+  ObjectiveSpec.spec
