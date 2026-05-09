@@ -3,6 +3,7 @@ module Main (main) where
 import qualified Cadence.ConstraintSpec as ConstraintSpec
 import qualified Cadence.GoalSpec as GoalSpec
 import qualified Cadence.ObjectiveSpec as ObjectiveSpec
+import qualified Cadence.SessionLogSpec as SessionLogSpec
 import qualified CadenceSpec
 import Test.Hspec (hspec)
 
@@ -12,3 +13,4 @@ main = hspec $ do
   ObjectiveSpec.spec
   GoalSpec.spec
   ConstraintSpec.spec
+  SessionLogSpec.spec
