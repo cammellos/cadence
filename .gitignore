@@ -1,4 +1,5 @@
-dist
+di;
+.direnv/
 dist-*
 cabal-dev
 *.o
