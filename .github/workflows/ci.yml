@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Lint
+        run: nix develop -c hlint app src test
+
+      - name: Download Cabal package index
+        run: nix develop -c cabal update
+
+      - name: Build
+        run: nix develop -c cabal build
+
+      - name: Test
+        run: nix develop -c cabal test --enable-tests
