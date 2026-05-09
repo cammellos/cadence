@@ -1,4 +1,6 @@
 module Main (main) where
 
+import Cadence (helloMessage)
+
 main :: IO ()
-main = putStrLn "Hello, Haskell!"
+main = putStrLn helloMessage

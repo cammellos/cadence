@@ -11,9 +11,29 @@ extra-doc-files: CHANGELOG.md
 common warnings
     ghc-options: -Wall
 
+library
+    import:           warnings
+    exposed-modules:  Cadence
+    hs-source-dirs:   src
+    build-depends:    base ^>=4.20.2.0
+    default-language: GHC2021
+
 executable cadence
     import:           warnings
     main-is:          Main.hs
-    build-depends:    base ^>=4.20.2.0
+    build-depends:
+        base ^>=4.20.2.0,
+        cadence
     hs-source-dirs:   app
+    default-language: GHC2021
+
+test-suite cadence-test
+    import:           warnings
+    type:             exitcode-stdio-1.0
+    main-is:          Main.hs
+    hs-source-dirs:   test
+    build-depends:
+        base ^>=4.20.2.0,
+        cadence,
+        hspec ^>=2.11.12
     default-language: GHC2021

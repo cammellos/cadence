@@ -28,6 +28,7 @@
             packages = with pkgs; [
               haskellPackages.ghc
               cabal-install
+              haskellPackages.hlint
             ];
           };
         }
