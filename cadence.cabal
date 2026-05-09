@@ -16,6 +16,7 @@ library
     exposed-modules:
         Cadence
         Cadence.Constraint
+        Cadence.CurrentPlan
         Cadence.SessionLog
         Cadence.Objective
         Cadence.Goal
@@ -42,6 +43,7 @@ test-suite cadence-test
     other-modules:
         CadenceSpec
         Cadence.ConstraintSpec
+        Cadence.CurrentPlanSpec
         Cadence.GoalSpec
         Cadence.ObjectiveSpec
         Cadence.SessionLogSpec
