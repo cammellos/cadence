@@ -15,6 +15,7 @@ library
     import:           warnings
     exposed-modules:
         Cadence
+        Cadence.Constraint
         Cadence.Objective
         Cadence.Goal
     hs-source-dirs:   src
@@ -39,6 +40,7 @@ test-suite cadence-test
     main-is:          Main.hs
     other-modules:
         CadenceSpec
+        Cadence.ConstraintSpec
         Cadence.GoalSpec
         Cadence.ObjectiveSpec
     hs-source-dirs:   test

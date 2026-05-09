@@ -1,5 +1,6 @@
 module Main (main) where
 
+import qualified Cadence.ConstraintSpec as ConstraintSpec
 import qualified Cadence.GoalSpec as GoalSpec
 import qualified Cadence.ObjectiveSpec as ObjectiveSpec
 import qualified CadenceSpec
@@ -10,3 +11,4 @@ main = hspec $ do
   CadenceSpec.spec
   ObjectiveSpec.spec
   GoalSpec.spec
+  ConstraintSpec.spec
